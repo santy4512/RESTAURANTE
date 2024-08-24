@@ -1,0 +1,461 @@
+@keyframes show{
+
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+
+.body {
+    font-family: Arial, sans-serif;
+    background-image: url('jovenes-comiendo-pizza.jpg');
+    background-size: 1550px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding-top: 70px; /* Espacio para el header fijo */
+}
+#body2 {
+    font-family: Arial, sans-serif;
+    background-image: url(7c7e12_e259ed98e436435f9e3be35394420e36~mv2.webp);
+    background-size: 100%;
+    margin: 0;
+    padding-top: 30px; 
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #1ce9b9, #00bcd4); /* Degradado en el header */
+    color: white;
+    border-bottom: 5px solid #004d40;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000; /* Asegura que el header esté encima de otros contenidos */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+header .row {
+    margin: 0;
+}
+
+header .col {
+    padding: 0;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 30%;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+.container2 {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    width: 70%;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 280px;
+    display: inline-block;
+}
+
+#limpiarlista{
+    margin-top: 30px;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+input, select {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00796b;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #d32f2f; /* Color para los mensajes de resultado */
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-container a {
+    text-decoration: none;
+}
+
+.button-container button {
+    background-color: #009688;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.button-container button:hover {
+    background-color: #00796b;
+}
+
+
+
+@media (max-width:1000px) and (min-width:600px){
+
+    .body {
+        font-family: Arial, sans-serif;
+        background-image: url(vista-vertical-comida-sana-variedad-sabores_140725-54204.avif);
+        background-size: 1000px;
+        margin: 0;
+        padding-top: 30px; 
+    }
+    #body2 {
+        font-family: Arial, sans-serif;
+        background-image: url(7c7e12_e259ed98e436435f9e3be35394420e36~mv2.webp);
+        background-size: 550px;
+        margin: 0;
+        padding-top: 30px; 
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to right, #1ce9b9, #00bcd4); /* Degradado en el header */
+        color: white;
+        border-bottom: 5px solid #004d40;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 15px 0;
+        text-align: center;
+        z-index: 1000; /* Asegura que el header esté encima de otros contenidos */
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    header .row {
+        margin: 0;
+    }
+
+    header .col {
+        padding: 0;
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    header a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        text-align: center;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 130px;
+        height: 50%;
+        width: 50%;
+    }
+    .container2 {
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        width: 70%;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 320px;
+        display: inline-block;
+    }
+
+    .h4{
+        font-size: 30px;
+    }
+    
+   #ti{
+    font-size: 20px;
+   }
+   #grado{
+    font-size: 20px;
+   }
+   #fecha{
+    font-size: 20px;
+   }
+
+    label {
+        display: block;
+        margin: 10px 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    input, select {
+        width: calc(100% - 16px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #009688;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #00796b;
+    }
+
+    #resultado {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #d32f2f; /* Color para los mensajes de resultado */
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .button-container a {
+        text-decoration: none;
+    }
+
+    .button-container button {
+        background-color: #009688;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+    .button-container button:hover {
+        background-color: #00796b;
+    }
+
+
+
+
+}
+
+@media (max-width:600px) and (min-width:100px){
+
+    .body {
+        font-family: Arial, sans-serif;
+        background-image: url(vista-vertical-comida-sana-variedad-sabores_140725-54204.avif);
+        background-size: 600px;
+        margin: 0;
+        padding-top: 30px; 
+    }
+    #body2 {
+        font-family: Arial, sans-serif;
+        background-image: url(7c7e12_e259ed98e436435f9e3be35394420e36~mv2.webp);
+        background-size: 550px;
+        margin: 0;
+        padding-top: 30px; 
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(to right, #1ce9b9, #00bcd4); /* Degradado en el header */
+        color: white;
+        border-bottom: 5px solid #004d40;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        padding: 15px 0;
+        text-align: center;
+        z-index: 1000; /* Asegura que el header esté encima de otros contenidos */
+    }
+
+    header h1 {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    header .row {
+        margin: 0;
+    }
+
+    header .col {
+        padding: 0;
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    header a:hover {
+        text-decoration: underline;
+    }
+
+    .container {
+        text-align: center;
+        border-radius: 5px;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 130px;
+        height: 50%;
+        width: 50%;
+    }
+    .container2 {
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        width: 70%;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 320px;
+        display: inline-block;
+    }
+
+    .h4{
+        font-size: 10px;
+    }
+    
+   #ti{
+    font-size: 10px;
+   }
+   #grado{
+    font-size: 10px;
+   }
+   #fecha{
+    font-size: 10px;
+   }
+
+    label {
+        display: block;
+        margin: 10px 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    input, select {
+        width: calc(100% - 16px);
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #009688;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #00796b;
+    }
+
+    #resultado {
+        margin-top: 20px;
+        font-weight: bold;
+        color: #d32f2f; /* Color para los mensajes de resultado */
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .button-container a {
+        text-decoration: none;
+    }
+
+    .button-container button {
+        background-color: #009688;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+
+    .button-container button:hover {
+        background-color: #00796b;
+    }
+
+
+
+
+}
