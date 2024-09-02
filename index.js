@@ -6,8 +6,8 @@ function registrar() {
         const numeroIngresado = document.getElementById('numero1').value.trim();
         const gradoIngresado = document.getElementById("grado1").value;
 
-        const numerosValidos = ["1023774175", "1097505477","1023528861","1035582250","1025897866","1036653498","1186463936","1015077254","1020309190","1013349443","1011404834","1025661066","1039225407","1023639506","1020313332","1192467893","1021932547","1012921058",
-            "1015192901", "1013464224","1054876231", "1131224941", "1023531583", "1040575284", "1020313404", "1195213771", "1020313762", "1073702587", "1015192701", "1036649993", "1036456674", "1020313207", "1198464853", "1128456356","1032021383", "1020308106", "N37594437105", "1020311782", "1155963146", "1033191242", "1036455212", "1023642899", "1020310884", "1128458316", "1023530520", "1018249606", "1128456835", "1042153411", "1128458138", "1018253330", "5239307", "5239558", "1198464000", "1011403837", "1033190985", "1025664596", "1013464263", "1020312256", "1128458314", "1018252204", "1033190443", "1036650062", "1013349047", "7542767", "1037750852", "1031815366", "1025766521", "1011402016", "1025660453", "1054555515", "1015189354", "1018248685", "1018250548", "1015191590", "1025660081", "1027808131", "1020119047", "1020307696", "1025658081", "4891187", "1018245046", "1138674880", "1023528908", "1020309710","1198463047", "1033261813", "1017933712", "1044151349", "1044151388", "1023637687",]; //almuerzo (falta mañana)
+        const numerosValidos = ["1023774175","1023528861","1035582250","1025897866","1036653498","1186463936","1015077254","1020309190","1013349443","1011404834","1025661066","1039225407","1023639506","1020313332","1192467893","1021932547","1012921058",
+            "1015192901", "1013464224","1054876231", "1131224941", "1023531583", "1040575284", "1020313404", "1195213771", "1020313762", "1073702587", "1015192701", "1036649993", "1036456674", "1020313207", "1198464853", "1128456356","1032021383", "1020308106", "N37594437105", "1020311782", "1155963146", "1033191242", "1036455212", "1023642899", "1020310884", "1097505477", "1128458316", "1023530520", "1018249606", "1128456835", "1042153411", "1128458138", "1018253330", "5239307", "5239558", "1198464000", "1011403837", "1033190985", "1025664596", "1013464263", "1020312256", "1128458314", "1018252204", "1033190443", "1036650062", "1013349047", "7542767", "1037750852", "1031815366", "1025766521", "1011402016", "1025660453", "1054555515", "1015189354", "1018248685", "1018250548", "1015191590", "1025660081", "1027808131", "1020119047", "1020307696", "1025658081", "4891187", "1018245046", "1138674880", "1023528908", "1020309710","1198463047", "1033261813", "1017933712", "1044151349", "1044151388", "1023637687",]; //almuerzo (falta mañana)
             
         const gradosValidos = ["6-1", "6-2", "6-3", "6-4", "7-1", "7-2", "7-3", "8-1", "8-2", "8-3","10-1", "10-2", "10-3", "10-4", "11-1", "11-2", "11-3", "11-4", "9-1", "9-2", "9-3"];
 
@@ -16,72 +16,93 @@ function registrar() {
 
         const resultado = document.getElementById('resultado');
 
+
         if (numerosValidos.includes(numeroIngresado) && gradosValidos.includes(gradoIngresado)) {
-            resultado.textContent = 'El estudiante es titular de restaurante, puede pasar.';
+            let registrosAlmuerzo = JSON.parse(localStorage.getItem('registrosAlmuerzo')) || [];
+        
+            const ahora = new Date().getTime();
+            const doceHoras = 12 * 60 * 60 * 1000; // 12 horas en milisegundos
+        
+            // Filtrar registros que aún no hayan expirado
+            registrosAlmuerzo = registrosAlmuerzo.filter(registro => (ahora - new Date(registro.fecha).getTime()) < doceHoras);
+            localStorage.setItem('registrosAlmuerzo', JSON.stringify(registrosAlmuerzo));
+        
+            // Verificar si ya está registrado
+            const duplicado = registrosAlmuerzo.some(registro => registro.numero === numeroIngresado);
+        
+            if (duplicado) {
+                alert("Este estudiante ya ingresó al almuerzo.");
+            } else {
+                resultado.textContent = 'El estudiante es titular de restaurante, puede pasar.';
             resultado.style.color = 'green';
-            alert("Datos registrados correctamente.");
-
-            // Crear un objeto para el registro
-            const registro = {
-                numero: numeroIngresado,
-                grado: gradoIngresado,
-                fecha: new Date().toLocaleString()
-            };
-
-            // Recuperar los registros almacenados en localStorage
-            let registros = JSON.parse(localStorage.getItem('registros')) || [];
-
-            // Agregar el nuevo registro al array
-            registros.push(registro);
-
-            // Guardar el array actualizado en localStorage
-            localStorage.setItem('registros', JSON.stringify(registros));
-
-
-        } else if (numerosValidos2.includes(numeroIngresado) && gradosValidos2.includes(gradoIngresado)){
-            resultado.textContent = 'El estudiante es titular de refrigerio, puede pasar.';
+                const registro = {
+                    numero: numeroIngresado,
+                    grado: gradoIngresado,
+                    fecha: new Date().toString() // Usa toISOString() para un formato de fecha consistente
+                };
+        
+                registrosAlmuerzo.push(registro);
+                localStorage.setItem('registrosAlmuerzo', JSON.stringify(registrosAlmuerzo));
+        
+                alert("Datos registrados correctamente.");
+            }
+        
+        } else if (numerosValidos2.includes(numeroIngresado) && gradosValidos2.includes(gradoIngresado)) {
+            let registrosRefrigerio = JSON.parse(localStorage.getItem('registrosRefrigerio')) || [];
+        
+            const ahora = new Date().getTime();
+            const doceHoras = 12 * 60 * 60 * 1000; // 12 horas en milisegundos
+        
+            // Filtrar registros que aún no hayan expirado
+            registrosRefrigerio = registrosRefrigerio.filter(registro => (ahora - new Date(registro.fecha).getTime()) < doceHoras);
+            localStorage.setItem('registrosRefrigerio', JSON.stringify(registrosRefrigerio));
+        
+            // Verificar si ya está registrado
+            const duplicado = registrosRefrigerio.some(registro => registro.numero === numeroIngresado);
+        
+            if (duplicado) {
+                alert("Este estudiante ya ingresó al refrigerio.");
+            } else {
+                resultado.textContent = 'El estudiante es titular de refrigerio, puede pasar.';
             resultado.style.color = 'green';
-            alert("Datos registrados correctamente.");
-
-            // Crear un objeto para el registro
-            const registro = {
-                numero: numeroIngresado,
-                grado: gradoIngresado,
-                fecha: new Date().toLocaleString()
-            };
-
-            // Recuperar los registros almacenados en localStorage
-            let registros = JSON.parse(localStorage.getItem('registros')) || [];
-
-            // Agregar el nuevo registro al array
-            registros.push(registro);
-
-            // Guardar el array actualizado en localStorage
-            localStorage.setItem('registros', JSON.stringify(registros));
-        }
-        else {
+                const registro = {
+                    numero: numeroIngresado,
+                    grado: gradoIngresado,
+                    fecha: new Date().toString() // Usa toISOString() para un formato de fecha consistente
+                };
+        
+                registrosRefrigerio.push(registro);
+                localStorage.setItem('registrosRefrigerio', JSON.stringify(registrosRefrigerio));
+        
+                alert("Datos registrados correctamente.");
+            }
+        
+        } else {
             resultado.textContent = 'El estudiante no es ni de almuerzo ni de refrigerio, no puede pasar.';
             resultado.style.color = 'red';
         }
+        
+    });
+}
 
-               });
-              }
-
-
+// Función para mostrar registros en la página correcta
 function mostrarRegistros() {
-    const ti = document.getElementById('ti');
-    const grado = document.getElementById('grado');
-    const fecha = document.getElementById('fecha');
+    const ti = document.getElementById('ti') || document.getElementById('ti2');
+    const grado = document.getElementById('grado') || document.getElementById('grado2');
+    const fecha = document.getElementById('fecha') || document.getElementById('fecha2');
 
-    // Recuperar los registros almacenados en localStorage
-    let registros = JSON.parse(localStorage.getItem('registros')) || [];
+    let registros;
 
-    // Limpiar el contenido actual
+    if (document.title.includes("Ingresados restaurante")) {
+        registros = JSON.parse(localStorage.getItem('registrosAlmuerzo')) || [];
+    } else if (document.title.includes("Ingresados refrigerio")) {
+        registros = JSON.parse(localStorage.getItem('registrosRefrigerio')) || [];
+    }
+
     ti.innerHTML = '';
     grado.innerHTML = '';
     fecha.innerHTML = '';
 
-    // Mostrar los registros
     registros.forEach(registro => {
         const divNumero = document.createElement('div');
         divNumero.textContent = registro.numero;
@@ -98,18 +119,21 @@ function mostrarRegistros() {
     });
 }
 
+// Función para limpiar registros en la página correcta
 function limpiarRegistros() {
-    localStorage.removeItem('registros');
-    mostrarRegistros(); 
+    if (document.title.includes("Ingresados restaurante")) {
+        localStorage.removeItem('registrosAlmuerzo');
+    } else if (document.title.includes("Ingresados refrigerio")) {
+        localStorage.removeItem('registrosRefrigerio');
+    }
+    mostrarRegistros();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     if (document.getElementById('formulario')) {
         registrar();
-    } else if (document.getElementById('ti')) {
+    } else if (document.getElementById('ti') || document.getElementById('ti2')) {
         mostrarRegistros();
-
         document.getElementById('limpiarlista').addEventListener('click', limpiarRegistros);
     }
 });
-
