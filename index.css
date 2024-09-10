@@ -315,7 +315,7 @@ button:hover {
     .body {
         font-family: Arial, sans-serif;
         background-image: url(vista-vertical-comida-sana-variedad-sabores_140725-54204.avif);
-        background-size: 600px;
+        background-size: 800px;
         margin: 0;
         padding-top: 30px; 
     }
@@ -396,6 +396,15 @@ button:hover {
     font-size: 10px;
    }
    #fecha{
+    font-size: 10px;
+   }
+   #ti2{
+    font-size: 10px;
+   }
+   #grado2{
+    font-size: 10px;
+   }
+   #fecha2{
     font-size: 10px;
    }
 
