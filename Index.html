@@ -5,142 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de ingresados</title>
     <link rel="stylesheet" href="index.css">
-   
-    <script src="index.js" defer></script>
     <link rel="icon" type="image/png" href="OIP.jpeg">
 
     <style>
 
-    footer {
-        background: linear-gradient(to right, #1ce9b9, #00bcd4);
-        color: white;
-        padding: 40px 0;
-        text-align: center;
-        border-top: 5px solid #004d40;
-      }
-  
-      footer .footer-content {
-        max-width: 1200px;
-        margin: auto;
-      }
-  
-      footer h3 {
-        margin-bottom: 20px;
-        font-size: 24px;
-        letter-spacing: 2px;
-      }
-  
-      footer p {
-        margin-bottom: 20px;
-        font-size: 16px;
-        line-height: 1.6;
-      }
-  
-      footer ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-      }
-  
-      footer ul li a {
-        text-decoration: none;
-        color: white;
-        font-size: 16px;
-        transition: color 0.3s;
-      }
-  
-      footer ul li a:hover {
-        color: #3498db;
-      }
-  
-      footer .footer-bottom {
-        margin-top: 10px;
-        margin-bottom: 20px;
-        font-size: 16px;
-      }
-
+footer {
+            background: linear-gradient(to right, #1ce9b9, #00bcd4);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 5px solid #004d40;
+        }
+        footer .footer-content {
+            max-width: 1200px;
+            margin: auto;
+        }
+        footer h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        footer p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
     </style>
-    
 </head>
-<body class="body"  style="background-color: rgb(176, 150, 242);">
-
+<body class="body" style="background-color: rgb(176, 150, 242);">
     <header>
         <h1 style="font-weight: bolder;">Registros del PAE</h1>
         <br>
         <center>
         <div class="row" style="display: flexbox;">
-            <div class="col">
-                <a href="Index.html"><li> MENÚ </li></a>
-            </div>
-            <div class="col" style="display: flexbox;">
-                <a href="listadeingresados.html"> <li>REGISTRADOS RESTAURANTE</li></a>
-            </div>
-            <div class="col" style="display: flexbox;">
-                <a href="listadeingresados2.html"> <li>REGISTRADOS REFRIGERIO </li></a>
-            </div>
+            <div class="col"><a href="Index.html"><li> MENÚ </li></a></div>
+            <div class="col" style="display: flexbox;"><a href="listadeingresados.html"> <li>REGISTRADOS RESTAURANTE</li></a></div>
+            <div class="col" style="display: flexbox;"><a href="listadeingresados2.html"> <li>REGISTRADOS REFRIGERIO </li></a></div>
         </center>
         </div>
     </header>
-<center>
-    <div class="container">
-        <form id="formulario">
-            <h2>Entrada para almuerzo:</h2>
-            <br>
-            <label for="numero">Número de documento:</label>
-            <br>
-            <input type="number" id="numero1" placeholder="--Escribe aquí--" required>
-            <br>
-
-            <label for="grado">Grado:</label>
-            <br>
-            <select id="grado1" required>
-                <option value="">--Seleccione aquí--</option>
-                <option value="6-1">6-1</option>
-                <option value="6-2">6-2</option>
-                <option value="6-3">6-3</option>
-                <option value="6-4">6-4</option>
-                <option value="7-1">7-1</option>
-                <option value="7-2">7-2</option>
-                <option value="7-3">7-3</option> 
-                <option value="8-1">8-1</option>
-                <option value="8-2">8-2</option>
-                <option value="8-3">8-3</option>
-                <option value="9-1">9-1</option>
-                <option value="9-2">9-2</option>
-                <option value="9-3">9-3</option>
-                <option value="10-1">10-1</option>
-                <option value="10-2">10-2</option>
-                <option value="10-3">10-3</option>
-                <option value="10-4">10-4</option>
-                <option value="11-1">11-1</option>
-                <option value="11-2">11-2</option>
-                <option value="11-3">11-3</option>
-                <option value="11-4">11-4</option>
-            </select>
-
-            <br><br>
-            <button type="submit" style="border-radius: 5px;">Verificar</button>
-        </form>
-        <p id="resultado"></p>
-    </div>
-</center>
-
-
-<footer style="margin-top: 50px;">
-    <div class="footer-content">
-      <h3>I.E Manuel J. Betancur - Contraloría Escolar 2024</h3>
-        <h4 style="font-size: 18px;font-weight: bolder;">Creado por: Santiago Ospina Muñoz</h4>
-      <p>Comprometidos con el cuidado de nuestros recursos para un futuro mejor.</p>
-    </div>
-    <div class="footer-bottom">
-      &copy; 2024 I.E Manuel J. Betancur. Todos los derechos reservados.
-    </div>
-  </footer>
-
-
-  
+    <center>
+        <div class="container">
+            <form id="formulario">
+                <h2>Entrada para almuerzo:</h2>
+                <br>
+                <label for="numero1">Número de documento:</label>
+                <br>
+                <input type="number" id="numero1" placeholder="--Escribe aquí--" required>
+                <br>
+                <label for="grado1">Grado:</label>
+                <br>
+                <select id="grado1" required>
+                    <option value="">--Seleccione aquí--</option>
+                    <option value="6-1">6-1</option>
+                    <option value="6-2">6-2</option>
+                    <option value="6-3">6-3</option>
+                    <option value="6-4">6-4</option>
+                    <option value="7-1">7-1</option>
+                    <option value="7-2">7-2</option>
+                    <option value="7-3">7-3</option> 
+                    <option value="8-1">8-1</option>
+                    <option value="8-2">8-2</option>
+                    <option value="8-3">8-3</option>
+                    <option value="9-1">9-1</option>
+                    <option value="9-2">9-2</option>
+                    <option value="9-3">9-3</option>
+                    <option value="10-1">10-1</option>
+                    <option value="10-2">10-2</option>
+                    <option value="10-3">10-3</option>
+                    <option value="10-4">10-4</option>
+                    <option value="11-1">11-1</option>
+                    <option value="11-2">11-2</option>
+                    <option value="11-3">11-3</option>
+                    <option value="11-4">11-4</option>
+                </select>
+                <br><br>
+                <button type="submit" style="border-radius: 5px;">Verificar</button>
+            </form>
+            <a href="registro.html"><button style="margin-top: 7px;">Registro</button></a>
+            <p id="resultado"></p>
+        </div>
+    </center>
+    <footer style="margin-top: 50px;">
+        <div class="footer-content">
+            <h3>I.E Manuel J. Betancur - Contraloría Escolar 2024</h3>
+            <h4 style="font-size: 18px;font-weight: bolder;">Creado por: Santiago Ospina Muñoz</h4>
+            <p>Comprometidos con el cuidado de nuestros recursos para un futuro mejor.</p>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 I.E Manuel J. Betancur. Todos los derechos reservados.
+        </div>
+    </footer>
+    <script src="index.js"></script>
 </body>
 </html>
